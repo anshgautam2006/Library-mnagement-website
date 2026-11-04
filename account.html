@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b52">
+  <title>Sign In | Central Library</title>
+  <link rel="stylesheet" href="styles.css?v=mysql-migration-v5">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand-row wrap">
+      <a class="brand" href="index.html"><span class="seal"><span>BB</span><small>LUCKNOW</small></span><span
+          class="brand-copy"><span class="hindi">बाबासाहेब भीमराव अम्बेडकर विश्वविद्यालय, लखनऊ</span><strong>Babasaheb
+            Bhimrao Ambedkar University, Lucknow</strong><small>CENTRAL LIBRARY</small></span></a>
+      <form class="top-search" action="catalog.html"><input aria-label="Search resources" name="q"
+          placeholder="Search books, journals, e-resources…"><button aria-label="Search">⌕</button></form>
+      <a class="login" href="account.html">♙ Login</a>
+    </div>
+    <nav class="main-nav">
+      <div class="wrap nav-inner"><a href="index.html">⌂ Home</a><a href="about.html">▤ About Library</a><a
+          href="catalog.html">⌕ Catalog Search</a><a href="e-resources.html">▣ E-Resources</a><a href="services.html">♧
+          User Services</a><a href="rules.html">▣ Rules &amp; Guidelines</a><a href="news-events.html">▦ News &amp;
+          Events</a><a href="contact.html">♧ Contact Us</a></div>
+    </nav>
+  </header>
+  <main class="inner-page">
+    <div class="page-banner">
+      <div class="wrap">
+        <p class="breadcrumb"><a href="index.html">Home</a><span>/</span>Library Account</p>
+        <h1>Library Account</h1>
+        <p>Choose your role to access your library workspace.</p>
+      </div>
+    </div>
+    <div class="wrap page-layout">
+      <article class="content-card">
+        <p class="lead">Sign in to manage resources and library activity. New members can submit a registration request
+          for administrator approval.</p>
+        <section id="main-content">
+          <div id="login-chooser">
+            <h2>Choose your login type</h2>
+            <p class="muted">Select the account role before signing in.</p>
+            <div class="role-choice-grid">
+              <button type="button" class="role-choice"
+                data-login-role="admin"><span>♙</span><strong>Admin</strong><small>Manage members, content, resources
+                  and fines</small></button>
+              <button type="button" class="role-choice"
+                data-login-role="librarian"><span>▤</span><strong>Librarian</strong><small>Manage library resources and
+                  copies</small></button>
+              <button type="button" class="role-choice"
+                data-login-role="member"><span>♧</span><strong>Member</strong><small>Search, issue and return
+                  resources</small></button>
+            </div>
+          </div>
+          <form class="account-form" id="login-form" action="/api/login" hidden>
+            <h2 id="login-role-title">Sign in</h2><input type="hidden" name="role">
+            <label for="uid">Email</label><input id="uid" name="email" type="email" autocomplete="username" required
+              placeholder="Enter your email">
+            <label for="pass">Password</label><input id="pass" name="password" type="password"
+              autocomplete="current-password" required placeholder="Enter your password">
+            <button type="submit">Sign in</button><button class="secondary-button" id="role-back" type="button">← Choose
+              a different role</button>
+          </form>
+          <button id="register-toggle" class="secondary-button register-toggle" type="button">New member? Register
+            here</button>
+          <p id="login-message" class="form-message" role="status" aria-live="polite"></p>
+          <form class="account-form signup-form" id="signup-form" hidden>
+            <h2>Member registration</h2>
+            <p class="muted">Your request will be sent to an administrator. You can sign in after it is approved.</p>
+            <label for="signup-name">Full name</label><input id="signup-name" name="name" autocomplete="name" required
+              placeholder="Your full name">
+            <label for="signup-email">Email</label><input id="signup-email" name="email" type="email"
+              autocomplete="email" required placeholder="Your email address">
+            <label for="signup-password">Password (8 characters minimum)</label><input id="signup-password"
+              name="password" type="password" minlength="8" autocomplete="new-password" required
+              placeholder="Create a password">
+            <button type="submit">Submit registration request</button>
+            <p id="signup-message" class="form-message" role="status" aria-live="polite"></p>
+          </form>
+          <div id="account-panel" hidden></div>
+        </section>
+        <a class="back-home" href="index.html">← Back to the Central Library homepage</a>
+      </article>
+      <aside class="side-card">
+        <h2>Explore the Library</h2><a href="catalog.html">Catalog Search <span>→</span></a><a
+          href="e-resources.html">E-Resources <span>→</span></a><a href="services.html">User Services
+          <span>→</span></a><a href="research-support.html">Research Support <span>→</span></a><a
+          href="contact.html">Contact Us <span>→</span></a>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 Babasaheb Bhimrao Ambedkar University, Lucknow<br>Central Library. All Rights Reserved.</p>
+      <blockquote>“Educate, Organize, Agitate”<small>— DR. B. R. Ambedkar</small></blockquote>
+      <nav><a href="sitemap.html">Sitemap</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="app.js?v=fine-paid-cancel-v1" defer></script>
+</body>
+
+</html>
